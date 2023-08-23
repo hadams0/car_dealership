@@ -1,3 +1,6 @@
+const Car = require("./Car");
+const Dealership = require("./Car");
+
 const Dealership = function (name, maxCars, carsInStock) {
   this.name = name;
   this.maxCars = maxCars;
@@ -27,3 +30,27 @@ Dealership.prototype.getCarsInStock = function () {
 Dealership.prototype.setCarsInStock = function (carsInStock) {
   this.carsInStock = carsInStock;
 };
+
+Dealership.prototype.countCars = function () {
+  return this.carsInStock.length;
+};
+
+Dealership.prototype.addCar = function () {
+  if (this.carsInStock.length < this.maxCars) {
+    this.carsInStock.push(car);
+  }
+};
+
+Dealership.prototype.getCarManufacturers = function () {
+  return this.carsInStock.map((car) => car.manufacturer);
+};
+
+Dealership.prototype.findAllCarsByManufacturer = function (manufacturer) {
+  return this.carsInStock.filter((car) => car.manufacturer === manufacturer);
+};
+
+Dealership.prototype.totalValueOfAllCarsInStock = function () {
+  return this.carsInStock.reduce((reducer, car) => reducer + car.price, 0);
+};
+
+module.exports = Dealership;
