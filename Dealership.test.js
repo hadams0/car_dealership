@@ -29,7 +29,7 @@ test("can add car to stock", () => {
   expect(actual).toBe(expected);
 });
 
-test("can return array containing each car manufacturer", () => {
+test("can return each car manufacturer", () => {
   const car1 = new Car("Ford", 100, "Manual");
   const car2 = new Car("Volkswagon", 50, "Automatic");
 
@@ -42,7 +42,7 @@ test("can return array containing each car manufacturer", () => {
   expect(actual).toStrictEqual(expected);
 });
 
-test("can calculate toal value of cars in stock", () => {
+test("can calculate toal value of all cars in stock", () => {
   const car1 = new Car("Ford", 100, "Manual");
   const car2 = new Car("Volkswagon", 50, "Automatic");
 
