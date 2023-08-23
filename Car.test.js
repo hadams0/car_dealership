@@ -11,7 +11,7 @@ test("can access manufacturer property", () => {
 test("can access price property", () => {
   const car = new Car("Volkswagon", 10000, "Automatic");
 
-  const expected = "10000";
+  const expected = 10000;
   const actual = car.price;
   expect(actual).toBe(expected);
 });
