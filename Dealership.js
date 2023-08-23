@@ -1,10 +1,10 @@
 const Car = require("./Car");
 const Dealership = require("./Car");
 
-const Dealership = function (name, maxCars, carsInStock) {
+const Dealership = function (name, maxCars) {
   this.name = name;
   this.maxCars = maxCars;
-  this.carsInStock = carsInStock;
+  this.carsInStock = [];
 };
 
 Dealership.prototype.getName = function () {
