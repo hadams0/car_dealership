@@ -10,7 +10,7 @@ describe("Accessing car properties", () => {
   test("can access manufacturer property", () => {
     const expected = "Volkswagon";
     const actual = car.manufacturer;
-    expect(actual).toBe(expected);
+    expect(actual).toBe(expected); //assertion
   });
 
   test("can access get manufacturer property", () => {

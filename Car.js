@@ -4,7 +4,8 @@ const Car = function (manufacturer, price, engineType) {
   this.engineType = engineType;
 };
 
-Car.prototype.getManufacturer = function () {
+Car.prototype.getManufacturer = () => {
+  // arrow function
   return this.manufacturer;
 };
 
