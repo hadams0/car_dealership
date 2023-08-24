@@ -4,6 +4,8 @@ const Dealership = function (name, maxCars) {
   this.carsInStock = [];
 };
 
+// getters and setters for properties
+
 Dealership.prototype.getName = function () {
   return this.name;
 };
@@ -19,6 +21,8 @@ Dealership.prototype.getMaxCars = function () {
 Dealership.prototype.setMaxCars = function (maxCars) {
   this.maxCars = maxCars;
 };
+
+// methods
 
 Dealership.prototype.countAllCars = function () {
   return this.carsInStock.length;
@@ -38,8 +42,21 @@ Dealership.prototype.findAllCarsByManufacturer = function (manufacturer) {
   return this.carsInStock.filter((car) => car.manufacturer === manufacturer);
 };
 
+Dealership.prototype.searchCars = function (query, property) {
+  return this.carsInStock.filter((car) => car(property) === query);
+};
+
 Dealership.prototype.totalValueOfAllCarsInStock = function () {
   return this.carsInStock.reduce((reducer, car) => reducer + car.price, 0);
+};
+
+Dealership.prototype.sellCar = function (car, customer) {
+  if (customer.wallet > car.price) {
+    this.carsInStock = this.carsInStock.filter(
+      (dealershipCar) => dealershipCar !== car
+    );
+    customer.buyCar(car);
+  }
 };
 
 module.exports = Dealership;
